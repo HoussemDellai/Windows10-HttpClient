@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="UapDemo.VsixTemplate.Houssem Dellai.c5ebc19b-fcd2-4a7b-93d0-4a8d5218ba6b" Version="1.0" Language="en-US" Publisher="Houssem Dellai" />
+    <DisplayName>Windows10HttpClient</DisplayName>
+    <Description xml:space="preserve">
+A sample project template that shows how to consume Web API web services (GET, POST, PUT and DELETE) using Windows 10 platform.
+It contains a sample code to download, add and remove tasks.
+Features:
+- MVVM
+- XAML Data Binding
+- Converters
+- Command
+- SplitView
+- HTTP web services</Description>
+    <MoreInfo>https://github.com/HoussemDellai/Windows10-HttpClient</MoreInfo>
+    <Tags>Windows 10; Http web services; Get; POST; DELETE; JSON; Command; Converter; MVVM</Tags>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0]" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\Windows 10 Http Client.zip" />
+  </Assets>
+</PackageManifest>
