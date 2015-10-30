@@ -1,0 +1,40 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:ViewModels="using:UapDemo.ViewModels"
+      x:Class="UapDemo.Views.NewTaskModelView"
+      mc:Ignorable="d">
+
+    <Page.DataContext>
+        <ViewModels:TasksViewModel />
+    </Page.DataContext>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <StackPanel Orientation="Vertical"
+                    Margin="20">
+            
+            <AppBarButton Icon="Back"
+                          Click="GoToPreviousPage_OnClick"/>
+            
+            <TextBlock Text="New Task"/>
+            
+            <TextBox Text="{Binding OneTaskModel.Title, Mode=TwoWay}"
+                     PlaceholderText="title"
+                     Margin="0,20"
+                     FontSize="20"/>
+            <TextBox Text="{Binding OneTaskModel.Content, Mode=TwoWay}"
+                     PlaceholderText="content"
+                     FontSize="20" />
+            
+            <Button Content="Add new Task"
+                    Width="200"
+                    HorizontalAlignment="Right"
+                    Margin="0,20"
+                    FontSize="20"
+                    Command="{Binding AddTaskModelCommand}"/>
+        </StackPanel>
+
+    </Grid>
+</Page>

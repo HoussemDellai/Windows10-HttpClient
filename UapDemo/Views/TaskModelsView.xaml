@@ -1,0 +1,98 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:ViewModels="using:UapDemo.ViewModels"
+      xmlns:Converters="using:UapDemo.Converters"
+      x:Class="UapDemo.Views.TaskModelsView"
+      mc:Ignorable="d">
+
+    <Page.Resources>
+        <Converters:DateTimeToElapsedHoursConverter x:Key="DateTimeToElapsedHoursConverter" />
+    </Page.Resources>
+
+    <Page.DataContext>
+        <ViewModels:TasksViewModel />
+    </Page.DataContext>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <SplitView x:Name="TasksSplitView"
+                   DisplayMode="CompactInline">
+            <SplitView.Pane>
+                <StackPanel>
+                    <AppBarButton Icon="List"
+                                  Width="50"
+                                  Click="ShowHideSplitViewPane_OnClick" />
+
+                    <StackPanel Margin="60,40,20,20">
+
+                        <Button Content="Get Tasks"
+                                Background="BlueViolet"
+                                Foreground="White"
+                                Width="200"
+                                FontSize="18"
+                                Margin="0,10"
+                                Command="{Binding GetTaskModelCommand}" />
+
+                        <Button Content="Add new Task"
+                                Width="200"
+                                FontSize="18"
+                                Background="CornflowerBlue"
+                                Foreground="White"
+                                Margin="0,10"
+                                Click="GoToAddNewTaskPage_OnClick" />
+
+                        <Button Content="Remove Task"
+                                Background="Crimson"
+                                FontSize="18"
+                                Foreground="White"
+                                Width="200"
+                                Margin="0,10"
+                                Command="{Binding DeleteTaskModelCommand}" />
+
+                        <Button Content="Open website"
+                                Background="Goldenrod"
+                                FontSize="18"
+                                Foreground="White"
+                                Width="200"
+                                Margin="0,10"
+                                Click="OpenWebsite_OnClick" />
+
+                    </StackPanel>
+                </StackPanel>
+            </SplitView.Pane>
+            <Grid>
+                <ListView ItemsSource="{Binding AllTaskModels}"
+                          SelectedItem="{Binding OneTaskModel, Mode=TwoWay}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical"
+                                        Margin="0,5,0,5"
+                                        Padding="10"
+                                        Background="#cc008080">
+
+                                <TextBlock Text="{Binding Title}"
+                                           FontWeight="Bold"
+                                           Foreground="White"
+                                           FontSize="18" />
+
+                                <TextBlock Text="{Binding Content}"
+                                           Opacity="0.6"
+                                           TextWrapping="Wrap"
+                                           Foreground="White"
+                                           Margin="10,10,0,0" />
+
+                                <TextBlock Text="{Binding CreatedAt, Converter={StaticResource DateTimeToElapsedHoursConverter}, Mode=OneWay}"
+                                           Opacity="0.6"
+                                           HorizontalAlignment="Right"
+                                           FontSize="12"
+                                           Foreground="White"
+                                           Margin="0,10,0,0" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </SplitView>
+    </Grid>
+</Page>
