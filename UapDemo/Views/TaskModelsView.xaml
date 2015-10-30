@@ -20,6 +20,7 @@
                    DisplayMode="CompactInline">
             <SplitView.Pane>
                 <StackPanel>
+                    
                     <AppBarButton Icon="List"
                                   Width="50"
                                   Click="ShowHideSplitViewPane_OnClick" />

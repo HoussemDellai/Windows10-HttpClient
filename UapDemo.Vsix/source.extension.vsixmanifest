@@ -18,6 +18,7 @@ Features:
     <ReleaseNotes>https://github.com/HoussemDellai/Windows10-HttpClient/blob/master/README.md</ReleaseNotes>
     <Icon>win10.png</Icon>
     <PreviewImage>appOverview.png</PreviewImage>
+    <Tags>Windows 10; Http web services; Get; POST; DELETE; JSON; Command; Converter; MVVM</Tags>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[14.0,15.0)" />
