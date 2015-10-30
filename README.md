@@ -15,4 +15,4 @@ Here is the app in action:
 <img src="https://github.com/HoussemDellai/Windows10-HttpClient/blob/master/Items/app%20-%20Copy.png"/>
 
 And here is the project structure inside Visual Studio:
-<img width="60%" src="https://github.com/HoussemDellai/Windows10-HttpClient/blob/master/Items/vsProject.png"/>
+<img width="50%" src="https://github.com/HoussemDellai/Windows10-HttpClient/blob/master/Items/vsProject.png"/>
