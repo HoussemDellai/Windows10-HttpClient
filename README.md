@@ -11,6 +11,8 @@ Features:
 - SplitView
 - HTTP web services
 
+The VSIX package can be installed through Visual Studio Gallery: https://visualstudiogallery.msdn.microsoft.com/f14c75e2-822f-44d1-b20b-50f55775321f
+
 Here is the app in action:
 <img src="https://github.com/HoussemDellai/Windows10-HttpClient/blob/master/Items/app%20-%20Copy.png"/>
 
